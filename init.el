@@ -9,6 +9,7 @@
 (package-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
+(add-to-list 'exec-path "/usr/local/git/bin/")
 
 (require 'wc-mode)
 (autoload 'ebib "ebib" "Ebib, a BibTeX database manager." t)
@@ -95,6 +96,11 @@
 ;; Turn on pandoc-mode whenever markdown-mode is on
 (load "pandoc-mode")
 (add-hook 'markdown-mode-hook 'turn-on-pandoc)
+
+;; MAGIT MODE ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Set keybindings
+(global-set-key "\C-cm" 'magit-status)
 
 ;; ORG MODE ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
