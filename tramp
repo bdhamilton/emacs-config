@@ -1,0 +1,28 @@
+;; -*- emacs-lisp -*- <12/08/11 09:15:26 /Users/bhv/.emacs.d/tramp>
+;; Tramp connection history.  Don't change this file.
+;; You can delete it, forcing Tramp to reapply the checks.
+
+((["sftp" "bdhamilt" "bdhamilton.com" nil]
+  ("uname" "Linux 2.6.32-20120131.55.1.bh6.x86_64")
+  ("test" "test")
+  ("remote-path"
+   ("/bin" "/usr/bin" "/usr/sbin" "/usr/local/bin"))
+  ("remote-shell" "/bin/sh")
+  ("busybox" nil)
+  ("~" "/home5/bdhamilt")
+  ("file-exists" "test -e")
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("readlink" "\\readlink")
+  ("stat" "\\stat")
+  ("id" "/bin/id")
+  ("gid-integer" 10040)
+  ("local-encoding" base64-encode-region)
+  ("local-decoding" base64-decode-region)
+  ("remote-encoding" "base64")
+  ("remote-decoding" "base64 -d -i")
+  ("inline-compress" "gzip")
+  ("inline-decompress" "gzip -d")
+  ("ls" "/bin/ls --color=never")
+  ("uid-integer" 10039)))

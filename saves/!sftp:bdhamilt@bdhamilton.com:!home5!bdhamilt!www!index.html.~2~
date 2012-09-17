@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+
+<head>
+<title>Brian Hamilton-Vise &raquo; Curriculum Vitae</title>
+<meta charset="utf-8">
+<style>
+
+	/* Remove browser styles (see http://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/) */
+	
+	html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+		}
+
+@font-face {
+    font-family: 'Uni Sans Semibold';
+    src: url('/styles/uni_sans_semi_bold-webfont.eot');
+    src: url('/styles/uni_sans_semi_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/styles/uni_sans_semi_bold-webfont.woff') format('woff'),
+         url('/styles/uni_sans_semi_bold-webfont.ttf') format('truetype'),
+         url('/styles/uni_sans_semi_bold-webfont.svg#UniSansSemiBoldRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body	{ font-family:Palatino; }
+
+strong	{ font-weight:bold; }
+em		{ font-style:oblique; }
+a	{ color:#1e3578; } 
+	a:hover { color: #5c73b9; }
+p	{ line-height:1.2em;margin-bottom:1.2em; }
+
+header	{
+	background-color:#000;
+	height:40px;
+	padding:14px 0 0 40px;
+	position:relative;
+	}
+	
+	header h1	{
+		border-left:30px solid #5C73B8;
+		color:#fff; 
+		height:30px; 
+		font-family:"Uni Sans Semibold";
+		font-size:28px;
+		letter-spacing:0px;
+		padding:0 0 0 15px;
+		text-transform:uppercase;
+		}
+	
+nav	{ font-family:"Uni Sans Semibold"; display:none; }
+	nav ul	{
+		list-style-type:none;
+		margin:0; 
+		padding:0; 
+		position:absolute; 
+		top:20px; 
+		left: 440px;
+		}
+	nav ul li	{ display:inline; }
+	nav a	{ color:white;padding:0 10px;text-decoration:none; }
+	nav a:hover, nav a.here	{ color:#5c73b8; }
+	
+div#desc	{ background-color:#eee;padding:15px 0 15px 50px; }
+	#desc p	{
+		color:#444;
+		font-size:1.1em;
+		line-height:1.4em;
+		margin:0;padding:0;
+		width:630px;
+	}
+	
+section	{ font-family:Palatino;margin:2em 0 0 40px; width:650px; }
+	section h1	{
+		border-bottom:1px solid #ddd;
+		font:oblique 2em Palatino;
+		margin-bottom:1em;
+		}
+
+#cv { position:relative; }
+
+#cv h2	{
+	color:#5c73b8;
+	font-size:1.15em;
+	font-weight:bold;
+	margin:1.3em 0 .3em;
+	text-transform:uppercase;
+	}
+	
+#cv ul	{ margin:3px 0 .8em 18px; line-height:1.3em; }
+	#cv ul li { margin-bottom:.3em; }
+	#cv ul li li { margin-bottom:0; }
+
+.invisible	{ display:none; }
+p.date {
+	color:#bbb;
+	font-size:.9em; 
+	font-style:oblique;
+	margin:0;
+	padding:0;
+	position:absolute;
+	top:1em;
+	right:0;
+	}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+	<h1>Brian Hamilton-Vise</h1>
+	<nav>
+	<ul>
+		<li><a href="#" class="here">CV</a></li>
+		<li><a href="#">Blog</a></li>
+		<li><a href="#">Contact</a></li>
+		<li><a href="#">Follow</a></li>
+	</ul>
+	</nav>
+</header>
+<div id="desc"><p>Brian Hamilton-Vise is a Ph.D. candidate in Christian
+	ethics at the University of Notre Dame, where he studies the history
+	of Christian political thought with a special focus on economic
+	issues. Email him at <a href="#">bdhamilton@gmail.com</a>.</p></div>
+
+<section id="cv">
+
+<?php
+include_once "markdown.php";
+include_once "smartypants.php";
+$cv_file = "cv.txt";
+$cv_open = fopen($cv_file, 'r');
+$cv = fread($cv_open, filesize($cv_file));
+fclose($cv_open);
+echo SmartyPants(Markdown($cv));
+?>
+
+</section>
+
+</body></html>
