@@ -42,7 +42,6 @@
 
 ;; Set C-x+m  or C-C+m to replace the M-x command
 (global-set-key "\C-x\C-m" 'execute-extended-command)
-(global-set-key "\C-c\C-m" 'execute-extended-command)
 
 ;; Set C-w to mean backward-kill-word if no region is selected
 (defun kill-region-or-backward-kill-word (&optional arg region) 
